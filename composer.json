@@ -1,0 +1,25 @@
+{
+  "name": "ctubio/www-toolbox",
+  "description": "PHP tools related to the WWW.",
+  "type": "project",
+  "keywords": ["php", "www"],
+  "homepage": "https://github.com/ctubio/www-toolbox",
+  "license": "MIT",
+  "authors": [{
+    "name": "Carles Tubio",
+    "homepage": "https://ca.rles-tub.io"
+  }],
+  "support": {
+    "email": "c@rles-tub.io",
+    "source": "https://github.com/ctubio/www-toolbox/tree/master",
+    "issues": "https://github.com/ctubio/www-toolbox/issues"
+  },
+  "require": {
+    "php": "~5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "ctubio\\WWWToolbox\\": "src/ctubio/WWWToolbox/"
+    }
+  }
+}
