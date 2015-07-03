@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "10a582ca45d0d996a5c7942d3ba1428b",
-    "packages": [],
+    "hash": "6c2756e3e52d3d9ebb54c946826a074e",
+    "packages": [
+        {
+            "name": "corneltek/pux",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/c9s/Pux.git",
+                "reference": "7776cfdd7e4f268fb5aaa781aee406b6d6486f8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/c9s/Pux/zipball/7776cfdd7e4f268fb5aaa781aee406b6d6486f8e",
+                "reference": "7776cfdd7e4f268fb5aaa781aee406b6d6486f8e",
+                "shasum": ""
+            },
+            "require-dev": {
+                "corneltek/cliframework": "dev-master",
+                "corneltek/phpunit-testmore": "dev-master",
+                "corneltek/universal": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pux": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "c9s",
+                    "email": "cornelius.howl@gmail.com"
+                }
+            ],
+            "description": "Fast PHP router",
+            "time": "2014-09-29 15:36:44"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
