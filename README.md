@@ -42,7 +42,7 @@ echo new WWWToolbox(
   WWWToolbox::ALL_TOOLS
 );
 ```
-just write your list, for example:
+just write your list (for example to enable the urls ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```:
 ```
 echo new WWWToolbox(array(
   'dnscheck',
