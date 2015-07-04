@@ -67,11 +67,11 @@ echo new WWWToolbox(array(
 ```
 This will enable the urls ```/custom_dnscheck``` (for the tool ```dnscheck```) and so on.
 ### Customize the layout
-Please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
+Please copy the distributed file and feel free to modify ```/skin/layout.lex``` because this file is ignored by git:
 ```
 $ cd skin
-$ cp abstractLayout.lex.dist abstractLayout.lex
-$ vim abstractLayout.lex
+$ cp layout.lex.dist layout.lex
+$ vim layout.lex
 ```
 ### Very special thanks to:
 - https://github.com/c9s/Pux
