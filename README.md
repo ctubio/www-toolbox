@@ -1,5 +1,10 @@
 This tools are happy working at http://ca.rles-tub.io/tools.
 ## Install
+Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]) is required):
+```
+$ git clone ssh://git@github.com/ctubio/www-toolbox .
+$ composer install
+```
 ### Single webserver setup:
 just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
 
