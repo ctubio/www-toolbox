@@ -1,4 +1,4 @@
-<?php  namespace ctubio\WWWToolbox\Controller;
+<?php  namespace ctubio\ItsToolTime\Controller;
 
 use Pux\Controller;
 

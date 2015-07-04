@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ctubio\\WWWToolbox\\": "src/ctubio/WWWToolbox/"
+      "ctubio\\ItsToolTime\\": "src/ctubio/ItsToolTime/"
     }
   }
 }
