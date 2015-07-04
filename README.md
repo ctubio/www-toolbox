@@ -53,6 +53,13 @@ echo new WWWToolbox(array(
 This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan```.
 (or depending your configs may result in ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```, or may result in any other prefix that you make use instead of ```/tools``` as your subpath/reverse proxy).
 
+### Customize the layout
+please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
+```
+$ cd skin
+$ cp abstractLayout.lex.dist abstractLayout.lex
+$ vim abstractLayout.lex
+```
 ### Very special thanks to:
 - https://github.com/c9s/Pux
 - https://github.com/pyrocms/lex
