@@ -65,7 +65,7 @@ echo new WWWToolbox(array(
   'custom_portscan' => 'portscan'
 ));
 ```
-This will enable only the urls ```/custom_dnscheck``` for the tool ```dnscheck``` and so on.
+This will enable the urls ```/custom_dnscheck``` (for the tool ```dnscheck```) and so on.
 ### Customize the layout
 Please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
 ```
