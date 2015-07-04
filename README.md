@@ -40,7 +40,7 @@ just define a virtual host as usual but named ```www-toolbox``` (or any other na
 in ```pub/www-toolbox.php```instead of:
 ```
 echo new WWWToolbox(
-  WWWToolbox::ALL_TOOLS
+  WWWToolbox::$ALL_TOOLS
 );
 ```
 add your list of enabled tools:
@@ -54,6 +54,13 @@ echo new WWWToolbox(array(
 This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan```.
 (or depending your configs may result in ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```, or may result in any other prefix that you make use instead of ```/tools``` as your subpath/reverse proxy).
 
+Or you can also customize the urls:
+```
+echo new WWWToolbox(array(
+  'custom_dnscheck' => 'dnscheck'
+));
+This will enable only the urls ```/custom_dnscheck``` for the tool ```dnscheck```.
+```
 ### Customize the layout
 Please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
 ```

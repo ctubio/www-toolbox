@@ -1,29 +1,28 @@
 <?php namespace ctubio\ItsToolTime;
 
-use ctubio\ItsToolTime\Controller\ErrorController;
+use ctubio\ItsToolTime\Controller\AbstractController;
 use Pux\Executor;
 use Pux\Mux;
 
 class WWWToolbox {
 
-  const ALL_TOOLS = NULL;
-
-  private $tools = array(
-    'dummy'
+  static public $ALL_TOOLS = array(
+    'dummy' => 'dummy'
   );
 
   private $mux;
 
   public function __construct($tools = array()) {
     $this->mux = new Mux();
-    $this->mux->mount('/error', new ErrorController());
+    $this->mux->mount('/', new AbstractController());
+    $this->mux->add('/error404', __NAMESPACE__.'\\Controller\\AbstractController:error404');
 
-    if (!$tools) $tools = $this->tools;
+    if (!$tools) $tools = self::$ALL_TOOLS;
 
     if (is_string($tools)) $tools = array($tools);
 
     foreach($tools as $k => $v)
-      if (in_array($v, $this->tools)) {
+      if (in_array($v, self::$ALL_TOOLS)) {
         $class = __NAMESPACE__.'\\Controller\\'.ucfirst($v).'Controller';
         $this->mux->mount('/'.(is_numeric($k)?$v:$k), new $class());
       } else throw new \Exception('Unknown tool: "'.$v.'".');
@@ -32,7 +31,7 @@ class WWWToolbox {
   public function __toString() {
     return Executor::execute(
       $this->mux->dispatch(strtok($_SERVER['REQUEST_URI'], '?'))
-        ?: $this->mux->dispatch('/error/error404')
+        ?: $this->mux->dispatch('/error404')
     );
   }
 }
