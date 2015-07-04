@@ -9,7 +9,7 @@ This tools are happy working at http://ca.rles-tub.io/tools.
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/8d716efb-1ffc-401e-83c5-d1a643e0fa97.svg)](https://insight.sensiolabs.com/projects/8d716efb-1ffc-401e-83c5-d1a643e0fa97)
 [![Dependency Status](https://www.versioneye.com/user/projects/559752a8616634002100001b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/559752a8616634002100001b)
 [![Open Issues](https://img.shields.io/github/issues/ctubio/www-toolbox.svg)](https://github.com/ctubio/www-toolbox/issues)
-## Steal the tools!
+## Steal the toolbox! (or just one tool)
 Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with the following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]) is required):
 ```
 $ git clone ssh://git@github.com/ctubio/www-toolbox .
@@ -35,6 +35,21 @@ if you dont like to use a load balancer, config the main server (lets say 10.10.
 #### at 10.10.10.21:
 in the secondary sever, just a virtual host as usual but named ```www-toolbox``` (or any other name that you like) with the DocumentRoot at ```/pub```.
 
+#### Deploy all tools or just a few of them
+in ```pub/www-toolbox.php```instead of:
+```
+echo new WWWToolbox(
+  WWWToolbox::ALL_TOOLS
+);
+```
+just write your list, for example:
+```
+echo new WWWToolbox(array(
+  'dnscheck',
+  'sslcheck',
+  'portscan'
+));
+```
 ### Very special thanks to:
 - https://github.com/c9s/Pux
 - https://github.com/pyrocms/lex
