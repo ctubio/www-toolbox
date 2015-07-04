@@ -19,7 +19,7 @@ $ composer install
 just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
 
 ### Multiple webservers setup:
-if you dont like to use a load balancer, config the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only for serve the tools]):
+if you dont like to use a load balancer, configure the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only for serve the tools]):
 #### at 10.10.10.2:
 ##### /etc/hosts
 ```
@@ -42,7 +42,7 @@ echo new WWWToolbox(
   WWWToolbox::ALL_TOOLS
 );
 ```
-just write your list (for example to enable the urls ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```:
+just write your list:
 ```
 echo new WWWToolbox(array(
   'dnscheck',
@@ -50,6 +50,9 @@ echo new WWWToolbox(array(
   'portscan'
 ));
 ```
+This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan```.
+(or depending your configs may result in ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```, or may result in any other prefix that you make use instead of ```/tools``` as your subpath/reverse proxy).
+
 ### Very special thanks to:
 - https://github.com/c9s/Pux
 - https://github.com/pyrocms/lex
