@@ -16,11 +16,12 @@ $ git clone ssh://git@github.com/ctubio/www-toolbox .
 $ composer install
 ```
 ### Single webserver setup:
-just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
+just define a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
 
 ### Multiple webservers setup:
 if you dont like to use a load balancer, configure the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only* for serve the tools]):
-#### at 10.10.10.2:
+#### at 10.10.10.2 (main server):
+setup the reverse proxy editing the following configuration files:
 ##### /etc/hosts
 ```
   10.10.10.21 www-toolbox
@@ -32,8 +33,8 @@ if you dont like to use a load balancer, configure the main server (lets say 10.
   ProxyPassReverse  /tools     http://www-toolbox
   ProxyPassMatch    /tools(.*) http://www-toolbox$1
 ```
-#### at 10.10.10.21:
-in the secondary sever, just a virtual host as usual but named ```www-toolbox``` (or any other name that you like) with the DocumentRoot at ```/pub```.
+#### at 10.10.10.21 (secondary server):
+just define a virtual host as usual but named ```www-toolbox``` (or any other name that you defined previously) with the DocumentRoot at ```/pub```.
 
 ### Deploy all tools or just a few of them
 in ```pub/www-toolbox.php```instead of:
@@ -42,7 +43,7 @@ echo new WWWToolbox(
   WWWToolbox::ALL_TOOLS
 );
 ```
-just write your list:
+add your list of enabled tools:
 ```
 echo new WWWToolbox(array(
   'dnscheck',
@@ -54,7 +55,7 @@ This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan
 (or depending your configs may result in ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```, or may result in any other prefix that you make use instead of ```/tools``` as your subpath/reverse proxy).
 
 ### Customize the layout
-please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
+Please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
 ```
 $ cd skin
 $ cp abstractLayout.lex.dist abstractLayout.lex
