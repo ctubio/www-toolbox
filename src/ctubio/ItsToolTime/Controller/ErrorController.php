@@ -4,6 +4,6 @@ use Pux\Controller;
 
 class ErrorController extends Controller {
   public function error404Action() {
-    return 'Error: 404';
+    return 'Error: man, no tools yet.';
   }
 }
