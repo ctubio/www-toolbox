@@ -57,7 +57,7 @@ This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan
 Alternatively, you may customize the urls:
 ```
 echo new WWWToolbox(array(
-  'custom_dnscheck' => 'dnscheck'
+  'custom_dnscheck' => 'dnscheck',
   'custom_sslcheck' => 'sslcheck',
   'custom_portscan' => 'portscan'
 ));
