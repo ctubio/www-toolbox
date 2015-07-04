@@ -19,7 +19,7 @@ $ composer install
 just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
 
 ### Multiple webservers setup:
-if you dont like to use a load balancer, configure the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only for serve the tools]):
+if you dont like to use a load balancer, configure the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only* for serve the tools]):
 #### at 10.10.10.2:
 ##### /etc/hosts
 ```
@@ -56,3 +56,5 @@ This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan
 ### Very special thanks to:
 - https://github.com/c9s/Pux
 - https://github.com/pyrocms/lex
+
+* may be also dedicated to run some other totally useful secondary apps, ofcourse.
