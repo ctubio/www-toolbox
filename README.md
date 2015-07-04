@@ -9,7 +9,7 @@ This tools are happy working at http://ca.rles-tub.io/tools.
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/8d716efb-1ffc-401e-83c5-d1a643e0fa97.svg)](https://insight.sensiolabs.com/projects/8d716efb-1ffc-401e-83c5-d1a643e0fa97)
 [![Dependency Status](https://www.versioneye.com/user/projects/559752a8616634002100001b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/559752a8616634002100001b)
 [![Open Issues](https://img.shields.io/github/issues/ctubio/www-toolbox.svg)](https://github.com/ctubio/www-toolbox/issues)
-## Install
+## Steal the tools!
 Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with the following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]) is required):
 ```
 $ git clone ssh://git@github.com/ctubio/www-toolbox .
