@@ -4,7 +4,7 @@ This tools are happy working at http://ca.rles-tub.io/tools.
 just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
 
 ### Multiple webservers setup:
-Config the main server (lets say 10.10.10.2 [may be your main webserver]) to proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only for serve the tools]):
+If you dont like to use a load balancer, config the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only for serve the tools]):
 #### at 10.10.10.2:
 ##### /etc/hosts
 ```
