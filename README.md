@@ -1,6 +1,7 @@
+This tools are happy working at http://ca.rles-tub.io/tools.
 ## Install
 ### Single webserver setup:
-just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot.
+just a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
 
 ### Multiple webservers setup:
 Config the main server (lets say 10.10.10.2 [may be your main webserver]) to proxy all request from ```/tools``` to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only for serve the tools]):
@@ -17,7 +18,7 @@ Config the main server (lets say 10.10.10.2 [may be your main webserver]) to pro
   ProxyPassMatch    /tools(.*) http://www-toolbox$1
 ```
 #### at 10.10.10.21:
-in the secondary sever, just a virtual host as usual but named ```www-toolbox``` serving the tools.
+in the secondary sever, just a virtual host as usual but named ```www-toolbox``` with the DocumentRoot at ```/pub```.
 
 ### Very special thanks to:
 - https://github.com/c9s/Pux
