@@ -57,4 +57,4 @@ This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan
 - https://github.com/c9s/Pux
 - https://github.com/pyrocms/lex
 
-* may be also dedicated to run some other totally useful secondary apps, ofcourse.
+\* may be also dedicated to run some other totally useful secondary apps, ofcourse.
