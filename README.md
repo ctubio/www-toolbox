@@ -35,7 +35,7 @@ if you dont like to use a load balancer, config the main server (lets say 10.10.
 #### at 10.10.10.21:
 in the secondary sever, just a virtual host as usual but named ```www-toolbox``` (or any other name that you like) with the DocumentRoot at ```/pub```.
 
-#### Deploy all tools or just a few of them
+### Deploy all tools or just a few of them
 in ```pub/www-toolbox.php```instead of:
 ```
 echo new WWWToolbox(
