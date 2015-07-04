@@ -1,9 +1,13 @@
 <?php  namespace ctubio\ItsToolTime\Controller;
 
-use Pux\Controller;
+class ErrorController extends AbstractController {
+  public function indexAction() {
+    $content = 'Error²: man, no tools yet.';
+    return $this->wrapLayout($content);
+  }
 
-class ErrorController extends Controller {
   public function error404Action() {
-    return 'Error: man, no tools yet.';
+    $content = 'Error: man, no tools yet.';
+    return $this->wrapLayout($content);
   }
 }

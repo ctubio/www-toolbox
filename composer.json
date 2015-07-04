@@ -7,7 +7,7 @@
   "license": "MIT",
   "authors": [{
     "name": "Carles Tubio",
-    "homepage": "https://ca.rles-tub.io/tools"
+    "homepage": "https://ca.rles-tub.io"
   }],
   "support": {
     "email": "c@rles-tub.io",
@@ -16,7 +16,8 @@
   },
   "require": {
     "php": "~5.4",
-    "corneltek/pux": "~1.3"
+    "corneltek/pux": "~1.3",
+    "pyrocms/lex": "2.2.*"
   },
   "autoload": {
     "psr-4": {

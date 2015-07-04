@@ -1,9 +1,8 @@
 <?php  namespace ctubio\ItsToolTime\Controller;
 
-use Pux\Controller;
-
-class DummyController extends Controller {
+class DummyController extends AbstractController {
   public function indexAction() {
-    return 'dummy index';
+    $content = 'dummy index';
+    return $this->wrapLayout($content);
   }
 }
