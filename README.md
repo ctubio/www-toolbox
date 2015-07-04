@@ -1,4 +1,14 @@
+[![Release](https://img.shields.io/packagist/vpre/ctubio/www-toolbox.svg?label=release)](https://packagist.org/packages/ctubio/www-toolbox)
+[![Platform License](https://img.shields.io/badge/platform-unix--like-lightgray.svg)](https://www.gnu.org/)
+[![Software License](https://img.shields.io/badge/license-MIT-111111.svg)](LICENSE)
+
 This tools are happy working at http://ca.rles-tub.io/tools.
+
+[![Build Status](https://img.shields.io/travis/ctubio/www-toolbox/master.svg?label=test%20suite)](https://travis-ci.org/ctubio/www-toolbox)
+[![Coverage Status](https://img.shields.io/coveralls/ctubio/www-toolbox/master.svg?label=code%20coverage)](https://coveralls.io/r/ctubio/www-toolbox?branch=master)
+[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/8d716efb-1ffc-401e-83c5-d1a643e0fa97.svg)](https://insight.sensiolabs.com/projects/8d716efb-1ffc-401e-83c5-d1a643e0fa97)
+[![Dependency Status](https://www.versioneye.com/user/projects/559752a8616634002100001b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/559752a8616634002100001b)
+[![Open Issues](https://img.shields.io/github/issues/ctubio/www-toolbox.svg)](https://github.com/ctubio/www-toolbox/issues)
 ## Install
 Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with the following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]) is required):
 ```
