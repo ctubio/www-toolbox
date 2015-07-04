@@ -54,13 +54,13 @@ echo new WWWToolbox(array(
 This will enable only the urls ```/dnscheck```, ```/sslcheck``` and ```/portscan```.
 (or depending your configs may result in ```/tools/dnscheck```, ```/tools/sslcheck``` and ```/tools/portscan```, or may result in any other prefix that you make use instead of ```/tools``` as your subpath/reverse proxy).
 
-Or you can also customize the urls:
+Alternatively, you may customize the urls:
 ```
 echo new WWWToolbox(array(
   'custom_dnscheck' => 'dnscheck'
 ));
-This will enable only the urls ```/custom_dnscheck``` for the tool ```dnscheck```.
 ```
+This will enable only the urls ```/custom_dnscheck``` for the tool ```dnscheck```.
 ### Customize the layout
 Please copy the distributed file and feel free to modify ```/skin/abstractLayout.lex``` because this file is ignored by git:
 ```
