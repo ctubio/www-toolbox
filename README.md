@@ -20,7 +20,7 @@ just define a virtual host as usual. Drop the files to a subpath if you like to 
 
 ### Multiple webservers setup
 if you dont like to use a load balancer, configure the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only* for serve the tools]):
-#### at 10.10.10.2 (main server):
+#### at 10.10.10.2 (main webserver):
 setup the reverse proxy editing the following configuration files:
 ##### /etc/hosts
 ```
@@ -33,7 +33,7 @@ setup the reverse proxy editing the following configuration files:
   ProxyPassReverse  /tools     http://www-toolbox
   ProxyPassMatch    /tools(.*) http://www-toolbox$1
 ```
-#### at 10.10.10.21 (secondary server):
+#### at 10.10.10.21 (secondary webserver):
 just define a virtual host as usual but named ```www-toolbox``` (or any other name that you defined previously) with the DocumentRoot at ```/pub```.
 
 ### Deploy all tools or just a few of them
