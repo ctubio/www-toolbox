@@ -10,7 +10,7 @@ These tools are happy working at http://ca.rles-tub.io/tools.
 [![Dependency Status](https://www.versioneye.com/user/projects/559752a8616634002100001b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/559752a8616634002100001b)
 [![Open Issues](https://img.shields.io/github/issues/ctubio/www-toolbox.svg)](https://github.com/ctubio/www-toolbox/issues)
 ## Steal the toolbox! (or just one tool)
-Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with the following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]) is required):
+Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with the following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) is required):
 ```
 $ cd /var/www
 $ mkdir your.domain.name
