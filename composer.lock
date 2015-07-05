@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d81c34fc00d44ea6e5964bd7182155a2",
+    "hash": "02d7ed3b2b1e7c193a30509c0a040c15",
     "packages": [
         {
             "name": "corneltek/pux",
@@ -43,16 +43,16 @@
         },
         {
             "name": "pyrocms/lex",
-            "version": "2.2.3",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pyrocms/lex.git",
-                "reference": "28ae6125d52ae276f3479a66f9a484796730c4b4"
+                "reference": "8617ceb3c1aaba84cfcc2ee063c98eca5c6700f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pyrocms/lex/zipball/28ae6125d52ae276f3479a66f9a484796730c4b4",
-                "reference": "28ae6125d52ae276f3479a66f9a484796730c4b4",
+                "url": "https://api.github.com/repos/pyrocms/lex/zipball/8617ceb3c1aaba84cfcc2ee063c98eca5c6700f5",
+                "reference": "8617ceb3c1aaba84cfcc2ee063c98eca5c6700f5",
                 "shasum": ""
             },
             "require": {
@@ -60,9 +60,6 @@
             },
             "replace": {
                 "fuel/lex": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
             "autoload": {
@@ -87,7 +84,7 @@
                 "parser",
                 "template"
             ],
-            "time": "2013-01-11 21:21:48"
+            "time": "2014-02-07 03:39:58"
         }
     ],
     "packages-dev": [],
