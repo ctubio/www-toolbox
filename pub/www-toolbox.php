@@ -6,6 +6,8 @@ ini_set('error_reporting', E_ALL);
 
 require '../vendor/autoload.php';
 
+define('WWWToolboxPathPrefix', '/tools');
+
 echo new WWWToolbox(
   WWWToolbox::$ALL_TOOLS
 );

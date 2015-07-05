@@ -2,7 +2,7 @@
 <ul>
 {{ tools }}
   <li>
-    <a href="/tools/{{ url }}">{{ name }}</a>
+    <a href="{{ path }}" title="{{ name }}">{{ name }}</a>
   </li>
 {{ /tools }}
 </ul>

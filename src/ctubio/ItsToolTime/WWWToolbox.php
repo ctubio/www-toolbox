@@ -7,7 +7,7 @@ use Pux\Mux;
 class WWWToolbox {
 
   static public $ALL_TOOLS = array(
-    'dummy' => 'dummy'
+    'dummy'
   );
 
   private $mux;
