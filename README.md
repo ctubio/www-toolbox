@@ -12,8 +12,10 @@ These tools are happy working at http://ca.rles-tub.io/tools.
 ## Steal the toolbox! (or just one tool)
 Login to your desired machine, mkdir something under ```/var/www``` and compose the tools with the following commands ([Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]) is required):
 ```
-$ git clone ssh://git@github.com/ctubio/www-toolbox .
-$ composer install
+$ cd /var/www
+$ mkdir your.domain.name
+$ cd your.domain.name
+$ composer create-project ctubio/www-toolbox . --keep-vcs
 ```
 ### Available tools
  - portscan
