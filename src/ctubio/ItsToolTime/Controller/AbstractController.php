@@ -12,28 +12,32 @@ class AbstractController extends Controller {
         'name' => $v,
         'path' => constant('WWWToolboxPathPrefix').'/'.(is_numeric($k)?$v:$k)
       ));
-    return $this->wrapLayout($this->parseLex('index', [
+    return $this->parseLayout('index', [
       'tools' => $tools,
-    ]));
+    ]);
   }
 
   public function error404() {
     header("HTTP/1.0 404 Not Found");
-    return $this->wrapLayout($this->parseLex('error', [
+    return $this->parseLayout('error', [
       'error' => '404 Not Found'
-    ]));
+    ]);
   }
 
-  protected function wrapLayout($content) {
+  protected function parseLayout($template, $vars = array()) {
+    return $this->wrapLayout($this->parseLex($template, $vars));
+  }
+
+  private function wrapLayout($content) {
     return $this->parseLex('layout', [
       'content' => $content
     ]);
   }
 
-  private function parseLex($file, $vars) {
+  private function parseLex($template, $vars = array()) {
     $parser = new Parser();
-    return $parser->parse(file_get_contents('../skin/'.$file.'.lex'.(
-      file_exists('../skin/'.$file.'.lex') ? NULL : '.dist'
+    return $parser->parse(file_get_contents('../skin/'.$template.'.lex'.(
+      file_exists('../skin/'.$template.'.lex') ? NULL : '.dist'
     )), $vars);
   }
 }

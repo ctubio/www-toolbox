@@ -16,7 +16,7 @@ $ git clone ssh://git@github.com/ctubio/www-toolbox .
 $ composer install
 ```
 ### Available tools
- - none yet
+ - portscan
 
 ### Single webserver setup
 just define a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
