@@ -1,3 +1,5 @@
 import nightlydev tools
 import david tools
+make test/coverage
+add sources
 allow multiple layouts based on hostname
