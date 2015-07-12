@@ -21,7 +21,7 @@ $ composer create-project ctubio/www-toolbox . --keep-vcs
  - portscan
 
 ### Single webserver setup
-just define a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub``` as your DocumentRoot.
+just define a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub/www-toolbox.php``` as Index for the DocumentRoot.
 
 ### Multiple webservers setup
 if you dont like to use a load balancer, configure the main server (lets say 10.10.10.2 [may be your main webserver]) to reverse proxy all request from ```/tools``` (or any other path that you like) to the DocumentRoot of the secondary server (10.10.10.21 [may be a server dedicated only* for serve the tools]):
@@ -39,7 +39,7 @@ setup the reverse proxy editing the following configuration files:
   ProxyPassMatch    /tools(.*) http://www-toolbox$1
 ```
 #### at 10.10.10.21 (secondary webserver):
-just define a virtual host as usual but named ```www-toolbox``` (or any other name that you defined previously) with the DocumentRoot at ```/pub```.
+just define a virtual host as usual but named ```www-toolbox``` (or any other name that you defined previously) with the Index of the DocumentRoot at ```/pub/www-toolbox.php```.
 
 ### Deploy all tools or just a few of them
 in ```pub/www-toolbox.php```instead of:
@@ -68,8 +68,8 @@ echo new WWWToolbox(array(
 ));
 ```
 This will enable the urls ```/custom_dnscheck``` (for the tool ```dnscheck```) and so on.
-### Customize the layout
-Please copy the distributed file and feel free to modify ```/skin/layout.lex``` because this file is ignored by git:
+### Customize the layout (or any other template)
+Please copy the distributed file and feel free to modify anything, because ```/skin/*.lex``` files  are ignored by git:
 ```
 $ cd skin
 $ cp layout.lex.dist layout.lex
