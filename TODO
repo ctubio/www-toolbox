@@ -1,5 +1,6 @@
 import nightlydev tools
 import david tools
+import chrome tools
 make test/coverage
 add sources
 allow multiple layouts based on hostname
