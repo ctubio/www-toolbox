@@ -7,7 +7,7 @@ use Pux\Controller;
 class AbstractController extends Controller {
   public function indexAction() {
     $tools = array();
-    foreach (WWWToolbox::$ALL_TOOLS as $k => $v)
+    foreach (WWWToolbox::ALL_TOOLS as $k => $v)
       array_push($tools, array(
         'name' => $v,
         'path' => constant('WWWToolboxPathPrefix').'/'.(is_numeric($k)?$v:$k)

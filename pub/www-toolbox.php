@@ -9,5 +9,5 @@ require '../vendor/autoload.php';
 define('WWWToolboxPathPrefix', '/tools');
 
 echo new WWWToolbox(
-  WWWToolbox::$ALL_TOOLS
+  WWWToolbox::ALL_TOOLS
 );

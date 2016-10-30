@@ -6,7 +6,7 @@ use Pux\Mux;
 
 class WWWToolbox {
 
-  static public $ALL_TOOLS = array(
+  const ALL_TOOLS = array(
     'portscan'
   );
 
@@ -17,12 +17,12 @@ class WWWToolbox {
     $this->mux->mount('/', new AbstractController());
     $this->mux->add('/error404', __NAMESPACE__.'\\Controller\\AbstractController:error404');
 
-    if (!$tools) $tools = self::$ALL_TOOLS;
+    if (!$tools) $tools = self::ALL_TOOLS;
 
     if (is_string($tools)) $tools = array($tools);
 
     foreach($tools as $k => $v)
-      if (in_array($v, self::$ALL_TOOLS)) {
+      if (in_array($v, self::ALL_TOOLS)) {
         $class = __NAMESPACE__.'\\Controller\\'.ucfirst($v).'Controller';
         $this->mux->mount('/'.(is_numeric($k)?$v:$k), new $class());
       } else throw new \Exception('Unknown tool: "'.$v.'".');
