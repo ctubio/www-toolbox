@@ -7,7 +7,8 @@ use Pux\Mux;
 class WWWToolbox {
 
   const ALL_TOOLS = array(
-    'portscan'
+    'portscan',
+    'dnscheck'
   );
 
   private $mux;

@@ -1,0 +1,62 @@
+<h1>DNSBL and RBL Check</h1>
+<p>Check +200 most active Real-time DNS Blackhole Lists against Spam:</p>
+<div style="text-align:center;padding:10px 0px" class="form-list">
+  <div class="dnsblcheck-step1"><label for="dnsblcheck-host">Hostname (or IP in dotted-quad notation):</label><br /><input name="dnsblcheck-host" id="dnsblcheck-host" type="text" style="text-align:center;" /><br /><br /><button type="button" title="Check" class="button" id="dnsblcheck-button"><span><span>&dArr; Check &dArr;</span></span></button></div>
+  <div class="dnsblcheck-step2" style="display:none;"><button type="button" title="Stop" class="button" id="dnsblcheck-stop"><span><span>&dArr; Stop &dArr;</span></span></button></div>
+  <div id="dnsblcheck-pending" style="display:none;font-size: 18px;margin-top:20px;"><b id="dnsblcheck-pending-no" style="font-size: 21px;">{{ dnsbl_count }}</b> <span id="dnsblcheck-pending-txt">pending</span>, <b id="dnsblcheck-pending-ok" style="color:green;font-size:21px;">0</b> not listed, <b id="dnsblcheck-pending-ko" style="color:red;font-size:21px;">0</b> listed</div>
+  <div id="dnsblcheck-waitforit" class="waitforit" style="margin-top:20px;"></div><div id="dnsblcheck-results" style="margin-top:20px;"><div id="dnsblcheck-results-ko"></div><div id="dnsblcheck-results-ok"></div></div>
+</div>
+<script type="text/javascript">
+stopDNSBL = false;
+runDNSBL = false;
+jQuery('button#dnsblcheck-stop').click(function(){
+  stopDNSBL = true;
+  if (runDNSBL) {
+    jQuery('div#dnsblcheck-waitforit').hide();
+    jQuery('button#dnsblcheck-stop').find('span span').html('&uArr; Go Back &uArr;');
+    if (!parseInt(jQuery("b#dnsblcheck-pending-no").html()))
+      jQuery('span#dnsblcheck-pending-txt').html('pending');
+    else jQuery('span#dnsblcheck-pending-txt').html('skipped');
+    runDNSBL = false;
+  } else {
+    jQuery('div.dnsblcheck-step2').hide();
+    jQuery('div#dnsblcheck-results, div#dnsblcheck-pending').hide();
+    jQuery('div#dnsblcheck-results-ok').html('');
+    jQuery('div#dnsblcheck-results-ko').html('');
+    jQuery('b#dnsblcheck-pending-no').html('{{ dnsbl_count }}');
+    jQuery('b#dnsblcheck-pending-ko').html('0');
+    jQuery('b#dnsblcheck-pending-ok').html('0');
+    jQuery('span#dnsblcheck-pending-txt').html('pending');
+    jQuery('button#dnsblcheck-stop').find('span span').html('&uArr; Stop &uArr;');
+    jQuery('div.dnsblcheck-step1').fadeIn();
+  }
+});
+jQuery('button#dnsblcheck-button').click(function(){
+  stopDNSBL = false;
+  var h = jQuery('input#dnsblcheck-host').val();
+  if (!h||!(new RegExp(/\./).test(h))) return jQuery('div#dnsblcheck-results').show().find('div#dnsblcheck-results-ko').hide().html('very funny.').fadeIn();
+  else jQuery('div#dnsblcheck-results-ko').html('');
+  var checkDNSBL = function(h,n) {
+    if (stopDNSBL) return;
+    jQuery.ajax({
+      url: location.pathname+"?host="+h+'&n='+n,
+      context: jQuery('div#dnsblcheck-results')
+    }).done(function(data) {
+      if (stopDNSBL) return;
+      if (!data) {
+        jQuery('button#dnsblcheck-stop').click();
+        return;
+      }
+      jQuery(this).append(data);
+      if (!parseInt(jQuery("b#dnsblcheck-pending-no").html())) {
+        jQuery('button#dnsblcheck-stop').click();
+        return;
+      } else setTimeout(function(){checkDNSBL(h,++n);},1000);
+    });
+  };
+  jQuery('div.dnsblcheck-step1').hide();
+  jQuery('div#dnsblcheck-results, div#dnsblcheck-waitforit, div#dnsblcheck-pending, div.dnsblcheck-step2').fadeIn();
+  runDNSBL = true;
+  checkDNSBL(h,0);
+});
+</script>
