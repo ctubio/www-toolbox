@@ -19,6 +19,7 @@ $ composer create-project ctubio/www-toolbox . --keep-vcs
 ```
 ### Available tools
  - portscan
+ - dnscheck
 
 ### Single webserver setup
 just define a virtual host as usual. Drop the files to a subpath if you like to keep your current DocumentRoot, or make use of ```/pub/www-toolbox.php``` as Index for the DocumentRoot.
