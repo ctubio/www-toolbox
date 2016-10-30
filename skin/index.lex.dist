@@ -1,4 +1,5 @@
-<h1>Index of www-toolbox</h1>
+<h1>Index of {{ path }}</h1>
+<hr />
 <ul>
 {{ tools }}
   <li>
@@ -6,3 +7,5 @@
   </li>
 {{ /tools }}
 </ul>
+<hr />
+<p style="text-align:right;font-style: italic;"><small>please report issues on <a href="https://github.com/ctubio/www-toolbox/">github</a>.</small></p>

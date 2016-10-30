@@ -14,6 +14,7 @@ class AbstractController extends Controller {
       ));
     return $this->parseLayout('index', [
       'tools' => $tools,
+      'path' => constant('WWWToolboxPathPrefix'),
     ]);
   }
 
