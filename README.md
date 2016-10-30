@@ -31,7 +31,19 @@ setup the reverse proxy editing the following configuration files:
 ```
   10.10.10.21 www-toolbox
 ```
-##### /etc/apache2/sites-available/your.domain.name
+##### nginx: /etc/nginx/sites-available/your.domain.name
+```
+  location /tools {
+      rewrite ^/tools(/.*)$ $1 break;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_pass http://www-toolbox:80/;
+      proxy_read_timeout 90;
+  }
+```
+##### apache2: /etc/apache2/sites-available/your.domain.name
 ```
   ProxyVia On
   ProxyPass         /tools     http://www-toolbox
@@ -45,7 +57,7 @@ just define a virtual host as usual but named ```www-toolbox``` (or any other na
 in ```pub/www-toolbox.php```instead of:
 ```
 echo new WWWToolbox(
-  WWWToolbox::$ALL_TOOLS
+  WWWToolbox::ALL_TOOLS
 );
 ```
 add your list of enabled tools:
