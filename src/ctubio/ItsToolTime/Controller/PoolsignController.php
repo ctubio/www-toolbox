@@ -72,7 +72,7 @@ class PoolsignController extends AbstractController {
           $str = $this->hex2str($work[2].$work[3]);
           foreach($coinbases['coinbase_tags'] as $k => $coinbase)
             if (strpos($str, $k)!==FALSE)
-              $service = '<span style="cursor:help;" title="Pool identity decoded from coinbase signature">'.$coinbases['coinbase_tags'][$k]['name'].'</span>';
+              $service = '<span style="cursor:help;" title="Pool identity decoded from encoded coinbase signature">'.$coinbases['coinbase_tags'][$k]['name'].'</span>';
           $coinbase = '<h3 style="text-align:left;font-weight:normal;display:none;">Coinbase signature (part 1 and 2):<br /><table style="font-family: monospace;font-size:14px;" border="0"><tr><td>Encoded:&nbsp;</td><td><pre>'.$work[2].PHP_EOL.$work[3].'</pre></td></tr><tr><td>Decoded:&nbsp;</td><td><pre>'.$str.'</pre></td></tr></table></h3>';
         } else $coinbase = '<h3 style="text-align:left;font-weight:normal;display:none;">Coinbase signature (part 1 or 2): <span style="color:red;"><u><b>unknown</b></u></span></h3>';
         $service = '<h3 style="font-weight:normal;display:none;"><b>stratum+tcp</b>://<b>' . $_GET['host'] . '</b>:<b>' . $_GET['port'] . '</b> is <span style="color:green;"><u><b>opened</b></u></span><br/>(service: <b><u>' . $service . '</u></b>)</h3>';
