@@ -13,6 +13,15 @@
     <link href='//fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css' />
   </head>
   <body>
+    <style scoped>
+    ul, label, input, select { font-family: monospace; }
+    address { text-align:right; }
+    </style>
     {{ content }}
+    <hr />
+    <address>
+      {{ if goback }}<small style="float:left;"><a href="{{ goback }}">&lt;&lt; toolbox</a></small>{{ endif }}
+      <small style="font-style: italic;">please report issues on <a href="https://github.com/ctubio/www-toolbox/">github</a>.</small>
+    </address>
   </body>
 </html>

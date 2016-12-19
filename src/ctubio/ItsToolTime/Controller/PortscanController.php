@@ -1,6 +1,9 @@
 <?php  namespace ctubio\ItsToolTime\Controller;
 
 class PortscanController extends AbstractController {
+
+  const title = 'TCP/UDP Port Scan';
+
   public function indexAction() {
     if (isset($_GET['host']) and isset($_GET['port']) and isset($_GET['protocol'])) {
       if (is_string($_GET['host'])
@@ -23,6 +26,6 @@ class PortscanController extends AbstractController {
       }
       exit;
     }
-    return $this->parseLayout('portscan');
+    return $this->parseTool('portscan');
   }
 }

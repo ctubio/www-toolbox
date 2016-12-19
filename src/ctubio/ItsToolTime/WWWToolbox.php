@@ -8,7 +8,8 @@ class WWWToolbox {
 
   const ALL_TOOLS = array(
     'portscan',
-    'dnscheck'
+    'dnscheck',
+    'poolsign'
   );
 
   private $mux;

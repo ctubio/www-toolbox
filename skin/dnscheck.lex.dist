@@ -1,4 +1,4 @@
-<h1>DNSBL and RBL Check</h1>
+<h1>{{ title }}</h1>
 <p>Check +200 most active Real-time DNS Blackhole Lists against Spam:</p>
 <div style="text-align:center;padding:10px 0px" class="form-list">
   <div class="dnsblcheck-step1"><label for="dnsblcheck-host">Hostname (or IP in dotted-quad notation):</label><br /><input name="dnsblcheck-host" id="dnsblcheck-host" type="text" style="text-align:center;" /><br /><br /><button type="button" title="Check" class="button" id="dnsblcheck-button"><span><span>&dArr; Check &dArr;</span></span></button></div>

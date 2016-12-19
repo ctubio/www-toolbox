@@ -10,6 +10,7 @@ class AbstractController extends Controller {
     foreach (WWWToolbox::ALL_TOOLS as $k => $v)
       array_push($tools, array(
         'name' => $v,
+        'title' => constant(__NAMESPACE__.'\\'.ucfirst($v).'Controller::title'),
         'path' => constant('WWWToolboxPathPrefix').'/'.(is_numeric($k)?$v:$k)
       ));
     return $this->parseLayout('index', [
@@ -25,13 +26,20 @@ class AbstractController extends Controller {
     ]);
   }
 
-  protected function parseLayout($template, $vars = array()) {
-    return $this->wrapLayout($this->parseLex($template, $vars));
+  protected function parseTool($template, $vars = array()) {
+    return $this->parseLayout($template, array_merge($vars, [
+      'title' => constant(get_class($this).'::title')
+    ]));
   }
 
-  private function wrapLayout($content) {
+  protected function parseLayout($template, $vars = array()) {
+    return $this->wrapLayout($this->parseLex($template, $vars), $template=='index');
+  }
+
+  private function wrapLayout($content, $isIndex) {
     return $this->parseLex('layout', [
-      'content' => $content
+      'content' => $content,
+      'goback' => !$isIndex ? constant('WWWToolboxPathPrefix') : FALSE
     ]);
   }
 

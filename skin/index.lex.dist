@@ -3,9 +3,7 @@
 <ul>
 {{ tools }}
   <li>
-    <a href="{{ path }}" title="{{ name }}">{{ name }}</a>
+    <a href="{{ path }}" title="{{ name }}">{{ name }}</a> - {{ title }}
   </li>
 {{ /tools }}
 </ul>
-<hr />
-<p style="text-align:right;font-style: italic;"><small>please report issues on <a href="https://github.com/ctubio/www-toolbox/">github</a>.</small></p>

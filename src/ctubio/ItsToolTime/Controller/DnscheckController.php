@@ -3,6 +3,9 @@
 use ctubio\ItsToolTime\DNSBL;
 
 class DnscheckController extends AbstractController {
+
+  const title = 'DNSBL and RBL Check';
+
   public function indexAction() {
     $dnsbls = new DNSBL();
     if (isset($_GET['host']) and isset($_GET['n'])) {
@@ -20,7 +23,7 @@ class DnscheckController extends AbstractController {
       }
       exit;
     }
-    return $this->parseLayout('dnscheck', array(
+    return $this->parseTool('dnscheck', array(
       'dnsbl_count' => $dnsbls->getCount()
     ));
   }
