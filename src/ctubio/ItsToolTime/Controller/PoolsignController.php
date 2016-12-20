@@ -50,7 +50,7 @@ class PoolsignController extends AbstractController {
           }
           if (isset($o['m']['result']) and $o['m']['result']==true and isset($o['m']['id']) and $o['m']['id']==2) {
             $auth = TRUE;
-            $state .= '<h3 style="text-align:left;font-weight:normal;display:none;">Miner received: <span style="color:green;"><u><b>mining.authorize</b></u></span> (result=<b><u>true</u></b>)</h3>';
+            $state .= '<h3 style="text-align:left;font-weight:normal;display:none;">Miner received: <span style="color:green;"><u><b>mining.authorize</b></u></span> (result=<b><u>'.($auth?'true':'false').'</u></b>)</h3>';
           }
           if (isset($o['m']['result']) and isset($o['m']['result'][0]) and isset($o['m']['result'][0][0]) and isset($o['m']['result'][0][0][0]) and $o['m']['result'][0][0][0]=='mining.notify') {
             $state .= '<h3 style="text-align:left;font-weight:normal;display:none;">Miner received: <span style="color:green;"><u><b>mining.notify</b></u></span> (authorized subscription)</h3>';
@@ -59,7 +59,7 @@ class PoolsignController extends AbstractController {
             $state .= '<h3 style="text-align:left;font-weight:normal;display:none;">Miner send: <span style="color:green;"><u><b>'.$o['m']['method'].'</b></u></span></h3>';
           }
         }
-        if (!$auth) $state .= '<h3 style="text-align:left;font-weight:normal;display:none;">Miner failed to receive: <span style="color:red;"><u><b>mining.authorize</b></u></span> (result=<b><u>true</u></b>)</h3>';
+        if (!$auth) $state .= '<h3 style="text-align:left;font-weight:normal;display:none;">Miner failed to receive: <span style="color:red;"><u><b>mining.authorize</b></u></span> (result=<b><u>'.($auth?'true':'false').'</u></b>)</h3>';
         $service = '<span style="cursor:help;" title="or unknown">hidden</span>';
         if ($work) {
           if (!file_exists('/tmp/coinbases.json') or time()-filemtime('/tmp/coinbases.json')>=86400)
